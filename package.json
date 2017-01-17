@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tag": "riot --ext tag.html ./ ./"
+    "tag": "riot --ext tag.html ./tag ./",
+    "watch": "riot --ext tag.html -w ./tag ./"
   },
   "repository": {
     "type": "git",
