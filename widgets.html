@@ -4,16 +4,38 @@
     <meta charset="UTF-8">
     <title></title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <style>
+      .clock span {
+        display: block;
+        background: #f48;
+        color: #fff;
+        padding: 2px 5px;
+        margin-bottom: 3px;
+      }
+      .clock analog-clock {
+        display: block;
+        margin: 0 10px;
+      }
+      .clock {
+        width: 320px;
+        padding: 0;
+        padding-bottom: 10px;
+      }
+    </style>
   </head>
   <body>
-    <widget><analog-clock></analog-clock></widget>
+    <widget class="clock"><span>TOKYO</span><analog-clock></analog-clock></widget>
+    <widget class="clock"><span>PARIS</span><analog-clock utc="1"></analog-clock></widget>
     <widget><digital-clock></digital-clock></widget>
     <widget><date></date></widget>
+    <widget><timer></timer></widget>
+    <widget><timer minute="3" second="0"></timer></widget>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/riot/2.6.2/riot.min.js"></script>
     <script src="widget.js"></script>
     <script src="analog-clock.js"></script>
     <script src="digital-clock.js"></script>
     <script src="date.js"></script>
+    <script src="timer.js"></script>
     <script>
         riot.mount('*')
     </script>
