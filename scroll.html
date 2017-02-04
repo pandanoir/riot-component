@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <style>
+    lazy-content {
+      width: 300px;
+      height: 300px;
+      display: block;
+      border: 1px solid #000;
+      opacity: 1;
+      background: orange;
+      transition: opacity 0.5s linear 0;
+    }
+    lazy-content.hidden {
+      opacity: 0;
+    }
+    </style>
+  </head>
+  <body>
+    <my-app></my-app>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/riot/2.6.2/riot+compiler.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.slim.min.js"></script>
+    <script src="lazy-content.js"></script>
+    <script type="riot/tag">
+      <my-app>
+        <virtual each={i in range(10)}>
+          <lazy-content>{i}</lazy-content>
+        </virtual>
+        <script>
+          this.range = n => [...Array(n)].map((_, i) => i);
+      </my-app>
+    </script>
+    <script>
+        riot.mount('*')
+    </script>
+  </body>
+</html>
