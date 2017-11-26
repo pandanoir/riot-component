@@ -7,7 +7,6 @@ riot.tag2('scene', '<div if="{show}"> <yield></yield> </div>', '', '', function(
       }, opts.start);
     }
     else this.show=true;
-    console.log(opts);
     if (opts.timeout) {
       setTimeout(() => {
         this.unmount();
